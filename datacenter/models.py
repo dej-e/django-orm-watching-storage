@@ -27,7 +27,7 @@ class Visit(models.Model):
 
     def is_long(self, minutes):
         duration_seconds = int(self.get_duration().total_seconds())
-        return duration_seconds // 60 % 60 > minutes
+        return duration_seconds // 60 > minutes
 
     def get_duration(self):
         now = timezone.now()
