@@ -26,7 +26,7 @@ class Visit(models.Model):
     leaved_at = models.DateTimeField(null=True)
 
     def is_long(self, minutes):
-        duration_seconds = int(self.get_duration().total_seconds())
+        duration_seconds = self.get_duration().total_seconds()
         return duration_seconds // 60 > minutes
 
     def get_duration(self):
