@@ -24,12 +24,18 @@ pip install -r requirements.txt
 Пункт настройки DJANGO_DEBUG на производственном сервере должен быть False.
 При True отображает детальную информацию об ошибке.
 
+Пункт настройки SITE_SECRET_KEY это секретный ключ. Представляет собой строку из случайных символов.
+Используется для криптографической подписи, 
+должен быть случайным и сложным для подбора.
+
 ```
 DB_HOST=__your_host__
 DB_PORT=__your_port__
 DB_NAME=__your_name__
 DB_USER=__your_username__
 DB_PASSWORD=__your_password__
+DJANGO_DEBUG=True or False
+SITE_SECRET_KEY=__your_site_secret_key__
 ```
 
 ### Пример запуска
