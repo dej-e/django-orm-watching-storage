@@ -16,10 +16,8 @@ INSTALLED_APPS = ['datacenter']
 SECRET_KEY = os.getenv('SITE_SECRET_KEY')
 
 
-if os.environ.get('DJANGO_DEBUG') and os.environ.get('DJANGO_DEBUG').lower() == 'true':
-    DEBUG = True
-else:
-    DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', default='FALSE').upper() == 'TRUE'
+
 
 ROOT_URLCONF = "project.urls"
 
